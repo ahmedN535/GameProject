@@ -27,6 +27,7 @@ public class Player extends Entity {
         loadAnimatidling("/res/PlayerAnimations/idle.png");
 
 
+
     }
 
     public void setDefaultPlayer() {
@@ -92,8 +93,11 @@ public class Player extends Entity {
             direction = RIGHT;
             x += speed;
             idle = false;
-            System.out.println(x );
-        } else {
+            System.out.println(x);
+
+
+
+    }else {
             idle = true;
         }
     }
@@ -161,4 +165,6 @@ public class Player extends Entity {
             e.printStackTrace();
         }
     }
+
+
 }
