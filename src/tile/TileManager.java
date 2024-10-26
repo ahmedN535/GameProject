@@ -4,11 +4,11 @@ import main.GamePanel;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class TileManager {
     GamePanel gp;
@@ -18,20 +18,20 @@ public class TileManager {
     public TileManager (GamePanel gp){
         this.gp = gp;
         tile = new Tiles[10];
+        mapTileNum= new int[gp.maxScreenCol][gp.maxScreenRow];
         loadMap();
         getTileImage();
-        mapTileNum= new int [gp.maxScreenCol][gp.maxScreenRow];
 
     }
 
     public void getTileImage (){
         try {
             tile[0] = new Tiles();
-            tile[0].image= ImageIO.read(getClass().getResourceAsStream("/res/Tiles/Grass_Middle.png"));
+            tile[0].image= ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/Tiles/Grass_Middle.png")));
             tile[1] = new Tiles();
-            tile[1].image= ImageIO.read(getClass().getResourceAsStream("/res/Tiles/Water_Middle.png"));
+            tile[1].image= ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/Tiles/Water_Middle.png")));
             tile[2] = new Tiles();
-            tile[2].image= ImageIO.read(getClass().getResourceAsStream("/res/Tiles/Path_Middle.png"));
+            tile[2].image= ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/Tiles/Path_Middle.png")));
 
 
 
@@ -46,24 +46,19 @@ public class TileManager {
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             int col = 0;
             int row = 0;
-            while ( col < gp.maxScreenCol && row < gp.maxScreenRow ) {
+            while (row < gp.maxScreenRow) {
                 String line = br.readLine();
+                if (line == null) break;// Break if there are no more lines
+                System.out.println(line);
 
+                String[] numbers = line.split(" ");
 
-                while (col < gp.maxScreenCol) {
-                    String[] numbers = line.split(" ");
-
-                    int num = Integer.parseInt(numbers[col]);
-
-                    mapTileNum[col][row] = num;
-                    col++;
+                for (col = 0; col < gp.maxScreenCol; col++) {
+                    mapTileNum[col][row] = Integer.parseInt(numbers[col]);
+                    System.out.println(mapTileNum[col][row]);
                 }
-                if (col == gp.maxScreenCol) {
-                    col = 0;
-                    row++;
 
-
-                }
+                row++;
             }
             br.close();
 
