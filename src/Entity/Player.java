@@ -109,7 +109,7 @@ public class Player extends Entity {
         } else {
             image = animationsw[direction][currentframe];
         }
-        g2.drawImage(image, x, y, gp.tileSize * 3, gp.tileSize * 3, null);
+        g2.drawImage(image, x, y, gp.tileSize * 8, gp.tileSize * 8, null);
     }
 
 

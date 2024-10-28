@@ -1,0 +1,47 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "hugemap.tmx": {
+            "scale": 1.52890625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 128.19621870209505,
+                "y": 95.82013285641287
+            }
+        },
+        "untitled.tmx": {
+            "scale": 1.52,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 128.28947368421052,
+                "y": 95.72368421052632
+            }
+        }
+    },
+    "last.exportedFilePath": "C:/Users/msi/IdeaProjects/Game/Game 1.0/src/res/maps",
+    "last.imagePath": "C:/Users/msi/IdeaProjects/Game/Game 1.0/src/res/Tiles",
+    "map.height": 12,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.renderOrder": "2",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 16,
+    "openFiles": [
+    ],
+    "project": "HUGEMAP.tiled-project",
+    "recentFiles": [
+        "hugemap.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
